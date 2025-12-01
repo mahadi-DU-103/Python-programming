@@ -1,0 +1,119 @@
+"""write your own python code named arm which takes an arbitrary vector of length n and 
+return the mean of that vector using while and for loop commands.
+also calculate the arithmetic mean of 0.003, 1.04,0.1, 0 and 0.01 using code arm """
+import numpy as np
+def arm_for(v):
+    n = len(v)
+    sum=0
+    print(f"length of the data set is {n}")
+    for i in range(n):
+        sum=sum+v[i]
+    ar_mean = sum/n
+    print(sum)
+    print(f"arithmetic mean of the data set is {ar_mean}")
+v = np.array([0.003,1.04,0.1,0,0.01])
+arm_for(v)
+def arm_while(c):
+    n1 = len(c)
+    sum2 = 0
+    i=0
+    while i<n1:
+        sum2+=c[i]
+        i+=1
+    ar_mean1 = sum2/n1
+    print(sum2)
+    print(f"arithmetic mean of the data set is {ar_mean1}")
+c = np.array([0.003,1.04,0.1,0,0.01])
+arm_while(c)
+
+# """write a python program rel_finder that determines the nature and strength of the relations
+# between two quantitative variable of arbitrary length n.
+# use both while and for loop within the code to achieve this.
+# use two vector say x = 5,8,3,10 and y = 3.8,3.5,4,3 to verify whether your rel_finder works or not.""'
+import math as m
+import numpy as np
+def rel_finder(u1,u2):
+    n_u1 = len(u1)
+    i=0
+    sum_1 = 0 
+    sum_2 = 0
+    while i< n_u1: # for e jemon ekta loop er under ei shob hoyechilo ekhane hobena cause i keu increament korte hobe jeta for e automatic hoto.
+        sum_1+=u1[i]
+        sum_2+=u2[i]
+        i+=1
+    mean1 = sum_1/n_u1
+    mean2 = sum_2/n_u1
+    xdiff_sq = 0
+    ydiff_sq = 0
+    sum_of_product = 0
+    i = 0
+    while i < n_u1:
+        xdiff = u1[i]-mean1
+        ydiff = u2[i]-mean2
+        xdiff_sq += xdiff**2
+        ydiff_sq += ydiff**2
+        sum_of_product += xdiff*ydiff
+        i+=1
+    print(f"the sum of product of the data stes is {sum_of_product}")    
+    corr_coeff = sum_of_product/m.sqrt(xdiff_sq*ydiff_sq)
+    print(f"the correlation coefficient of the 2 variables are {corr_coeff}")
+    if corr_coeff>=0.9 or corr_coeff<=-0.9:
+        print(f'the 2 variables have very strong linear relationship.')
+    elif corr_coeff<=0.1 or corr_coeff>=-0.1:
+        print(f'the 2 variables have very weak linear relationship.')
+    elif corr_coeff>=0.5 or corr_coeff<=-0.5:
+        print("the variables have some what strong relationship.")
+    else:
+        print("the varibles have somewhat weak linear relationship")
+u1_values = list(map(int,input('enter the values').split()))
+u1 = np.array(u1_values)
+u2_values = list(map(int,input('enter the values').split()))
+u2 = np.array(u2_values)
+rel_finder(u1,u2)
+
+# """write a python program named sed2 which takes a general m*m matrix as its input
+# and return the sum of the non-diagonal even elements along with the total added numbers."""
+def sed2():
+    n = int(input("Enter the size of the matrix (n): "))
+    print(f"Enter the {n*n} elements of the matrix row-wise:")
+    matrix = np.array(list(map(int, input().split()))).reshape(n, n)
+    sum_even = 0
+    count_even = 0
+    for i in range(n):
+        for j in range(n):
+            if i != j and matrix[i][j] % 2 == 0:
+                sum_even += matrix[i][j]
+                count_even += 1
+    print(f"The sum of non-diagonal even elements is: {sum_even}")
+    print(f"The total count of non-diagonal even elements is: {count_even}")
+sed2()
+
+  
+"""write a python code named sys_solver which takes a general m*m matrix and a vector
+of length m as its input and return the solution of a system of linear equation.
+x+y=5
+x-y=1
+"""
+def sys_solver():
+    n = int(input("Enter the size of the matrix (n): "))
+    print(f"Enter the {n*n} coefficients of matrix A row-wise:")
+    A = np.array(list(map(float, input().split()))).reshape(n, n)
+    print(f"Enter the {n} constants for vector b:")
+    b = np.array(list(map(float, input().split())))
+
+    D = np.linalg.det(A)   #np.linalg.det(A) built in.
+    if D == 0:
+        print("This system of linear equation is inconsistent hence it has no solution.")
+        return
+    elif D!=0:
+        Dx = A.copy() # makes a copy of matrix A so i dont modify the original.
+        Dx[:,0]=b #it targets the first column of Dx and replaces with b.
+        Dy = A.copy()
+        Dy[:,1]=b #targets the second column of Dy and replaces with vector b.
+        x = np.linalg.det(Dx)/D
+        y = np.linalg.det(Dy)/D
+    print(f'the value of x is  {x}')
+    print(f'the value of y is {y}')   
+sys_solver()
+
+
