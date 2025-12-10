@@ -81,4 +81,11 @@ def is_leap(year):
 
 # Input and test the function
 year = int(input())
+
 print(is_leap(year))
+
+#create a function to find the final amount to be paid by a customer after after adding 20% tax to the purchased amount.
+def money_with_tax(amount,tax_rate):
+    final_amount = amount + (amount*tax_rate)
+    print("The final amount of money to be paid is: ",final_amount)
+money_with_tax(987,0.33)
