@@ -1,25 +1,25 @@
 import numpy as np
-# import statistics as stat
-# x1 = np.array([[1,3,5,7,2]])
-# z1 = [1,2,3,4,5]
-# y1 = np.max(x1)
-# print(y1,"is the maximum value.")
-# y2 = np.min(x1)
-# print(y2,"is the minimum value.")
-# y3 = np.sum(x1)
-# print(y3,"is the sum of all elements.")
-# y4 = np.mean(x1)
-# z2 = stat.mean(z1)
-# print(z2)
-# print(y4,"is the mean of the elements.")
-# y5 = np.median(x1)
-# print(y5,"is the median of the elements.")
-# y6 = np.prod(x1)
-# print(y6,"is the product of all elements.")
-# y7 = np.var(x1)
-# print(y7,"is the variance of the elements.")
-# y8 = np.std(x1)
-# print(y8,"is the standard deviation of the elements.")
+import statistics as stat
+x1 = np.array([[1,3,5,7,2]])
+z1 = [1,2,3,4,5]
+y1 = np.max(x1)
+print(y1,"is the maximum value.")
+y2 = np.min(x1)
+print(y2,"is the minimum value.")
+y3 = np.sum(x1)
+print(y3,"is the sum of all elements.")
+y4 = np.mean(x1)
+z2 = stat.mean(z1)
+print(z2)
+print(y4,"is the mean of the elements.")
+y5 = np.median(x1)
+print(y5,"is the median of the elements.")
+y6 = np.prod(x1)
+print(y6,"is the product of all elements.")
+y7 = np.var(x1)
+print(y7,"is the variance of the elements.")
+y8 = np.std(x1)
+print(y8,"is the standard deviation of the elements.")
 
 #manually:
 #1. arithmetic mean:
@@ -104,53 +104,53 @@ print(va_r)
 variance1 = stat.variance(x) #unbiased variance(divided by n-1)
 print(variance1)    
 
-# # 4. sum of square:
-# def ss(w):
-#     sum_of_elements = 0
-#     sum_of_square = 0
-#     n_ss = len(w)
-#     print(f"length when sum of square:{n_ss}")
-#     for i in range(n_ss):
-#         sum_of_elements += w[i]
-#         mean_ss = sum_of_elements/n_ss
-#         print(f"{w[i]} is the value of the {i}'th element.")
-#     print(f"sum of the elements:{sum_of_elements}")    
-#     print(f"mean of this data set:{mean_ss}")
-#     for i in range(n_ss):
-#         sum_of_square += (w[i]-mean_ss)**2
-#     print(f"sum of square of this data set is:{sum_of_square}")
-# w = list(range(1,11))
-# ss(w)
+# 4. sum of square:
+def ss(w):
+    sum_of_elements = 0
+    sum_of_square = 0
+    n_ss = len(w)
+    print(f"length when sum of square:{n_ss}")
+    for i in range(n_ss):
+        sum_of_elements += w[i]
+        mean_ss = sum_of_elements/n_ss
+        print(f"{w[i]} is the value of the {i}'th element.")
+    print(f"sum of the elements:{sum_of_elements}")    
+    print(f"mean of this data set:{mean_ss}")
+    for i in range(n_ss):
+        sum_of_square += (w[i]-mean_ss)**2
+    print(f"sum of square of this data set is:{sum_of_square}")
+w = list(range(1,11))
+ss(w)
 
-# # 5. sum of product:
-# def sop(v1,v2):
-#     len_sop1 = len(v1)
-#     len_sop2 = len(v2)
-#     sum68 = 0
-#     sum69 = 0
-#     sum_of_pv1 = 0
-#     sum_of_pv2 = 0
-#     for i in range(len_sop1):      
-#         sum68 += v1[i]
-#         print(f"{i}th elements of v1 is:{v1[i]}")
-#     mean1 = sum68/len_sop1 
-#     print(mean1,":is the mean of v1")
-#     for i in range(len_sop2):
-#         sum69 += v2[i]
-#         print(f"{i}th elements of v2 is:{v2[i]}")
-#     mean2 = sum69/len_sop2
-#     print(mean2,":is the mean of v2")
-#     for i in range(len_sop1):
-#         sum_of_pv1 += abs(v1[i]-mean1)
-#     print(f"sum of product for v1 is:{sum_of_pv1}")
-#     for i in range(len_sop2):
-#         sum_of_pv2 += abs(v2[i]-mean2)
-#     print("sum of product for v2:",sum_of_pv2)
-#     sum_of_product = sum_of_pv1*sum_of_pv2
-#     print(sum_of_product,":is the sum of product of the data sets.")
-# v1 = list(range(1,11,2))
-# v2 = list(range(2,11,2))
-# sop(v1,v2)
+# 5. sum of product:
+def sop(v1,v2):
+    len_sop1 = len(v1)
+    len_sop2 = len(v2)
+    sum68 = 0
+    sum69 = 0
+    sum_of_pv1 = 0
+    sum_of_pv2 = 0
+    for i in range(len_sop1):      
+        sum68 += v1[i]
+        print(f"{i}th elements of v1 is:{v1[i]}")
+    mean1 = sum68/len_sop1 
+    print(mean1,":is the mean of v1")
+    for i in range(len_sop2):
+        sum69 += v2[i]
+        print(f"{i}th elements of v2 is:{v2[i]}")
+    mean2 = sum69/len_sop2
+    print(mean2,":is the mean of v2")
+    for i in range(len_sop1):
+        sum_of_pv1 += abs(v1[i]-mean1)
+    print(f"sum of product for v1 is:{sum_of_pv1}")
+    for i in range(len_sop2):
+        sum_of_pv2 += abs(v2[i]-mean2)
+    print("sum of product for v2:",sum_of_pv2)
+    sum_of_product = sum_of_pv1*sum_of_pv2
+    print(sum_of_product,":is the sum of product of the data sets.")
+v1 = list(range(1,11,2))
+v2 = list(range(2,11,2))
+sop(v1,v2)
 
 #covariance:
 def cov(c1,c2):
@@ -235,83 +235,83 @@ u2_values = list(map(int,input('enter the values of u2: ').split()))
 u2 = np.array(u2_values)
 rel_finder(u1,u2)
 
-# # 8. frequency distribution:
-# import numpy as np
-# def freq_dist(hell):
-#     summation = 0
-#     hell = list(hell)
-#     n = len(hell)
-#     for i in range(18,n):
-#         frequency = hell.count(i)
-#         print(f"frequency of {[i]}th element is {frequency}")
-#         summation+=hell[i]
-#         amean = summation/n
-#         variance = frequency* (hell[i]-amean)**2
-#         print(f"variance of the {[i]}th value is {variance}")
-# hell = np.array([18,21,23,27,27,30,32,32,32,36,37,41,42,42,43,48,48,51,55,58,60,62,63,67,68,88])
-# freq_dist(hell)
+# 8. frequency distribution:
+import numpy as np
+def freq_dist(hell):
+    summation = 0
+    hell = list(hell)
+    n = len(hell)
+    for i in range(18,n):
+        frequency = hell.count(i)
+        print(f"frequency of {[i]}th element is {frequency}")
+        summation+=hell[i]
+        amean = summation/n
+        variance = frequency* (hell[i]-amean)**2
+        print(f"variance of the {[i]}th value is {variance}")
+hell = np.array([18,21,23,27,27,30,32,32,32,36,37,41,42,42,43,48,48,51,55,58,60,62,63,67,68,88])
+freq_dist(hell)
 
-# import numpy as np
-# import math as m
-# def freq_dist_and_moments_print(data):
-#     data = list(data)
-#     mean = sum(data) / len(data)
-#     total_freq = len(data)
+import numpy as np
+import math as m
+def freq_dist_and_moments_print(data):
+    data = list(data)
+    mean = sum(data) / len(data)
+    total_freq = len(data)
 
-#     moment2 = 0
-#     moment3 = 0
-#     moment4 = 0
-#     sum_fixi = 0
-#     sum_fi = 0
+    moment2 = 0
+    moment3 = 0
+    moment4 = 0
+    sum_fixi = 0
+    sum_fi = 0
 
-#     print(f"Mean: {mean:.2f}")
-#     print(" Creatinine  |  fi  | fixi | (x-mean)^2 | (x-mean)^3 | (x-mean)^4 |")
-#     print("---------------------------------------------------------------")
+    print(f"Mean: {mean:.2f}")
+    print(" Creatinine  |  fi  | fixi | (x-mean)^2 | (x-mean)^3 | (x-mean)^4 |")
+    print("---------------------------------------------------------------")
 
-#     for i in sorted(set(data)):
-#         fi = data.count(i)
-#         fixi = fi * i
-#         dev = i - mean
+    for i in sorted(set(data)):
+        fi = data.count(i)
+        fixi = fi * i
+        dev = i - mean
 
-#         moment2 += fi * dev**2
-#         moment3 += fi * dev**3
-#         moment4 += fi * dev**4
-#         sum_fixi += fixi
-#         sum_fi += fi
+        moment2 += fi * dev**2
+        moment3 += fi * dev**3
+        moment4 += fi * dev**4
+        sum_fixi += fixi
+        sum_fi += fi
 
-#         print(f"{i:5.2f} | {fi:4} | {fixi:8} | {dev**2:11.8f} | {dev**3:11.8f} | {dev**4:11.8f} |")
+        print(f"{i:5.2f} | {fi:4} | {fixi:8} | {dev**2:11.8f} | {dev**3:11.8f} | {dev**4:11.8f} |")
 
-#     variance = moment2 / total_freq
-#     third_moment = moment3 / total_freq
-#     fourth_moment = moment4 / total_freq
-#     beta_1 = (third_moment)**2/(variance)**3
-#     gamma_1 = m.sqrt(beta_1)
-#     beta_2 = fourth_moment/(variance)**2
+    variance = moment2 / total_freq
+    third_moment = moment3 / total_freq
+    fourth_moment = moment4 / total_freq
+    beta_1 = (third_moment)**2/(variance)**3
+    gamma_1 = m.sqrt(beta_1)
+    beta_2 = fourth_moment/(variance)**2
 
-#     print("----------------------------------------------------------------")
-#     print(f"Total | n={sum_fi:4} | {sum_fixi:4.8f} | {moment2:11.8f} | {moment3:11.8f} | {moment4:11.8f} |")
-#     print(f"\nVariance (2nd moment)  :{variance:.8f}")
-#     print(f"3rd Central Moment     :{third_moment:.8f}")
-#     print(f"4th Central Moment     :{fourth_moment:.8f}")
-#     print(f"value of ß1 is:        :{beta_1:.8f}")
-#     print(f"value of Γ1 is:        :{gamma_1:.8f}")
-#     print(f"value of ß2 is:        :{beta_2:.8f}")
+    print("----------------------------------------------------------------")
+    print(f"Total | n={sum_fi:4} | {sum_fixi:4.8f} | {moment2:11.8f} | {moment3:11.8f} | {moment4:11.8f} |")
+    print(f"\nVariance (2nd moment)  :{variance:.8f}")
+    print(f"3rd Central Moment     :{third_moment:.8f}")
+    print(f"4th Central Moment     :{fourth_moment:.8f}")
+    print(f"value of ß1 is:        :{beta_1:.8f}")
+    print(f"value of Γ1 is:        :{gamma_1:.8f}")
+    print(f"value of ß2 is:        :{beta_2:.8f}")
 
-#     if gamma_1>0:
-#         print("The distribution is positively skewed.")
-#     elif gamma_1<0:
-#         print("The distribution is negatively skewed.")
-#     else:
-#         print("Inconclusive.")
-#     if beta_2>3:
-#         print("The distribution is leptokurtic.")
-#     elif beta_2<3:
-#         print("The distribution is platykurtic")
-#     else:
-#         print("The distribution is mesokurtic.")
+    if gamma_1>0:
+        print("The distribution is positively skewed.")
+    elif gamma_1<0:
+        print("The distribution is negatively skewed.")
+    else:
+        print("Inconclusive.")
+    if beta_2>3:
+        print("The distribution is leptokurtic.")
+    elif beta_2<3:
+        print("The distribution is platykurtic")
+    else:
+        print("The distribution is mesokurtic.")
 
-# hell = np.array([])
-# freq_dist_and_moments_print(hell)
+hell = np.array([])
+freq_dist_and_moments_print(hell)
 
 # 9. regression equation: least square method
 import matplotlib.pyplot as plt
@@ -411,4 +411,5 @@ if assists_per_matches_mbappe>assists_per_matches_vini:
 elif assists_per_matches_vini>assists_per_matches_bellingham:
     print(f"Vinicius Jr wins the playmaker of the year award with {assits_vini} assists.")
 else:
+
     print(f"Jude Bellingham wins the playmaker of the year award with {assists_bellingham} assists.")
